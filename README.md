@@ -1,5 +1,3 @@
-# Novarj7
-Servidor brasileiro de SA-MP Roleplay
 NOVARJ7 RP
 
 Servidor brasileiro de GTA San Andreas Multiplayer (SA-MP).
