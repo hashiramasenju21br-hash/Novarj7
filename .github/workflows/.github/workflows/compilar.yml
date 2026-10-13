@@ -1,0 +1,29 @@
+name: Compilador NOVARJ7 RP
+
+on:
+  push:
+    branches:
+      - principal
+  workflow_dispatch:
+
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar arquivos do projeto
+        uses: actions/checkout@v4
+
+      - name: Compilar servidor
+        id: compilador
+        uses: knryuu/pawn-compiler-action@v1
+        with:
+          input: novarj7.pwn
+          output: novarj7.amx
+          includes: .
+
+      - name: Disponibilizar arquivo compilado
+        uses: actions/upload-artifact@v4
+        with:
+          name: NOVARJ7-RP
+          path: novarj7.amx
