@@ -1,0 +1,20 @@
+
+name: Compilar NOVARJ7 RP
+
+on:
+  push:
+    branches: [main, principal]
+  workflow_dispatch:
+
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar compilador Pawn
+        uses: knryuu/pawn-compiler-action@v1
+        with:
+          script: novarj7.pwn
